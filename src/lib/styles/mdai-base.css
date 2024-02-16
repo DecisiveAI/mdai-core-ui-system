@@ -1,0 +1,165 @@
+:root {
+  --mdai-font-family: Roboto, sans-serif;
+  --mdai-header-size-multiplier: 1;
+  --mdai-h1-font-size: 96px;
+  --mdai-h2-font-size: 64px;
+  --mdai-h3-font-size: 48px;
+  --mdai-h4-font-size: 34px;
+  --mdai-h5-font-size: 24px;
+  --mdai-h6-font-size: 20px;
+
+  --mdai-core-header-color: var(--Brand---light-purple);
+
+  /* Figma color styles */
+  --mdai-brand---dark-purple: #6d3b78;
+  --mdai-brand---light-purple: #b062c2;
+  --mdai-very-dark-grey: #131313;
+  --mdai-dark-grey: #393939;
+  --mdai-med-grey: #6f6f6f;
+  --mdai-med-grey-75: #6f6f6f;
+  --mdai-med-grey-50: #6f6f6f;
+  --mdai-med-grey-25: #6f6f6f;
+  --mdai-light-grey-1: #d9d9d9;
+  --mdai-light-grey-2: #ededed;
+  --mdai-white: #ffffff;
+  --mdai-font-1--primary: #393939;
+  --mdai-font-2--secondary: #707070;
+  --mdai-font-3-reverse-primary: #ffffff;
+  --mdai-font-4-reverse-secondary: #e8e7e7;
+  --mdai-data---peach: #ff9788;
+  --mdai-data---pink: #fc8f9b;
+  --mdai-data---red: #d01c1f;
+  --mdai-data---rust: #6a2e2a;
+  --mdai-data---green: #00d021;
+  --mdai-data---lime: #c6e67a;
+  --mdai-data---blue: #96b3de;
+  --mdai-data---yellow: #f7b718;
+  --mdai-data---gold: #a98b2d;
+  --mdai-data---purple: #763374;
+  --mdai-data---turquoise: #00b1d2;
+  --mdai-brand---light: #d865f2;
+  --mdai-primary----dark: #ddb7e6;
+
+  /* Figma color variables */
+  --mdai-accent-1: #42a1a5;
+  --mdai-accent-2: #be867e;
+  --mdai-error: #b00020;
+  --mdai-high-emphasis-100: #000000;
+  --mdai-high-emphasis-40: #9f9f9f;
+  --mdai-high-emphasis-60: #757575;
+  --mdai-high-emphasis-80: #313131;
+  --mdai-primary-050: #eabef3;
+  --mdai-primary-100: #e288f6;
+  --mdai-primary-200: #be5ad4;
+  --mdai-primary-300: #9e4db0;
+  --mdai-primary-400: #8d33a0;
+  --mdai-primary-500: #6d3b78;
+  --mdai-primary-600: #61306b;
+  --mdai-primary-700: #572961;
+  --mdai-primary-800: #481254;
+  --mdai-primary-900: #2f0837;
+  --mdai-secondary: #537197;
+  --mdai-secondary-050: #d7e9ff;
+  --mdai-secondary-100: #b2d1f8;
+  --mdai-secondary-200: #a0c2ec;
+  --mdai-secondary-300: #83acde;
+  --mdai-secondary-400: #729acc;
+  --mdai-secondary-500: #6388b6;
+  --mdai-secondary-600: #537197;
+  --mdai-secondary-700: #476181;
+  --mdai-secondary-800: #3c526f;
+  --mdai-secondary-900: #25354a;
+}
+
+body {
+  font-family: var(--mdai-font-family);
+  color: var(--mdai-font-4-reverse-secondary);
+  background: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--mdai-core-color-headers);
+}
+
+a {
+  color: var(--mdai-primary-200);
+}
+
+a:visited {
+  color: var(--mdai-primary-050);
+}
+
+h1 {
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Headline 1 */
+  font-size: calc(
+    var(--mdai-h1-font-size) * var(--mdai-header-size-multiplier)
+  );
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+h2 {
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Headline 2 */
+  font-size: calc(
+    var(--mdai-h2-font-size) * var(--mdai-header-size-multiplier)
+  );
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Headline 3 */
+  font-size: calc(
+    var(--mdai-h3-font-size) * var(--mdai-header-size-multiplier)
+  );
+  font-style: normal;
+  font-weight: 300;
+}
+
+h4 {
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Headline 4 */
+  font-size: calc(
+    var(--mdai-h4-font-size) * var(--mdai-header-size-multiplier)
+  );
+  font-style: normal;
+  font-weight: 900;
+}
+
+h5 {
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Headline 5 */
+  font-size: calc(
+    var(--mdai-h5-font-size) * var(--mdai-header-size-multiplier)
+  );
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0.18px;
+}
+
+h6 {
+  font-feature-settings: "clig" off, "liga" off;
+
+  /* Headline 6 */
+  font-size: calc(
+    var(--mdai-h6-font-size) * var(--mdai-header-size-multiplier)
+  );
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+}
