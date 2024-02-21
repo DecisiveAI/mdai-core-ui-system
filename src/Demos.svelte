@@ -16,7 +16,6 @@
   import { applyThemeFromCss } from "./applyThemeFromCss";
   import "./lib/index";
   import "./lib/styles/mdai-base.css";
-  import "./lib/components/button/mdai-button";
   import Highlight from "svelte-highlight";
   import { xml, typescript } from "svelte-highlight/languages";
   import monokai from "svelte-highlight/styles/monokai";
@@ -40,11 +39,15 @@
   <h3>MyDecisive UI System</h3>
   <div class="blurb-box">
     <p>
-      Our UI system draws primarily from <a
+      We are currently in the process of building out our component set based on <a
         href="https://material-web.dev"
         target="_blank">Material Web</a
-      >, with our own theme and other touches applied. More of our own custom
-      components will be added in the future.
+      >. See the
+      <a
+        href="https://github.com/DecisiveAI/mydecisive-core-ui-system/blob/main/README.md#components"
+        target="_blank">README.md</a
+      >
+      for progress on components.
     </p>
   </div>
   <div class="theme-selector-container">
