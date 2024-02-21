@@ -2,12 +2,25 @@
 
 This repository and package are where our UI components live! Our UI core is primarily based on the @material/web web components library.
 
+# Components
+
+| Component | `mdai` Web Component | React component   | material-web base component | Demo | Stability |
+| --------- | -------------------- | ----------------- | --------------------------- | ---- | --------- |
+| Button    | `mdai-button`        | `MdaiReactButton` | `md-*-button`               | ✅   | Preview   |
+| Chips     | 🔜                   | 🔜                | `md-chipset`, `md-*-chip`   | ✅   |           |
+| Headings  | Styles only          | N/A               | N/A                         | ✅   | Preview   |
+| Icon      | 🔜                   | 🔜                | `md-icon`                   | ✅   |           |
+| Menu      | 🔜                   | 🔜                | `md-menu`, `md-menu-item`   | ✅   |           |
+| Select    | 🔜                   | 🔜                | `md-*-select`               |      |           |
+| Switch    | 🔜                   | 🔜                | `md-switch`                 | ✅   |           |
+| Tabs      | 🔜                   | 🔜                | `md-tabs`, `md-*-tab`       |      |           |
+
 # Getting Started
 
 ## Installation
 
 ```sh
-npm i --save @mydecisive/ui
+npm i --save @mydecisiveai/core-ui
 ```
 
 ## Usage
@@ -16,14 +29,14 @@ Import the JS package and code into your app with:
 
 ```ts
 // importing this file will import all web components. You do not need to import individual components where they are used in your application.
-import "mydecisive-core-ui-system";
+import "@mydecisiveai/core-ui";
 
 // import styles. Vite-based projects should be able to accept these imports and work like 🪄 magic 🪄. Webpack projects may need a CSS loader.
-import "mydecisive-core-ui-system/mdai-base.css";
+import "@mydecisiveai/core-ui/mdai-base.css";
 // import a color theme
-import "mydecisive-core-ui-system/mdai-theme-console.css";
+import "@mydecisiveai/core-ui/mdai-theme-console.css";
 // or
-import "mydecisive-core-ui-system/mdai-theme-website.css";
+import "@mydecisiveai/core-ui/mdai-theme-website.css";
 ```
 
 # Development

@@ -16,6 +16,7 @@
   import { applyThemeFromCss } from "./applyThemeFromCss";
   import "./lib/index";
   import "./lib/styles/mdai-base.css";
+  import "./lib/components/button/mdai-button";
   import Highlight from "svelte-highlight";
   import { xml, typescript } from "svelte-highlight/languages";
   import monokai from "svelte-highlight/styles/monokai";
@@ -58,22 +59,51 @@
     <div class="component-overview">
       <h3>Buttons</h3>
       <div class="component-preview row">
-        <md-outlined-button>Outlined Button</md-outlined-button>
-        <md-filled-button>Filled Button</md-filled-button>
-        <md-text-button>Text Button</md-text-button>
-        <md-outlined-icon-button>
-          <md-icon>celebration</md-icon>
-        </md-outlined-icon-button>
+        <mdai-button on:click={() => console.log("Text button!")}
+          >Text button</mdai-button
+        >
+        <mdai-button
+          variant="outlined"
+          icon="account_tree"
+          on:click={() => console.log("Outlined button!")}
+          >Outlined button w/ icon</mdai-button
+        >
+        <mdai-button
+          variant="filled"
+          on:click={() => console.log("Filled button!")}
+          >Filled button</mdai-button
+        >
+        <mdai-button
+          icononly
+          variant="outlined"
+          icon="celebration"
+          on:click={() => console.log("Icon button!")}
+        ></mdai-button>
       </div>
       <div class="code-block">
         <Highlight
           language={xml}
           class="code-block"
           code={`
-<md-outlined-button>Outlined Button</md-outlined-button>
-<md-filled-button>Filled Button</md-filled-button>
-<md-text-button>Text Button</md-text-button>
-<md-outlined-icon-button><md-icon>celebration</md-icon></md-outlined-icon-button>`.trim()}
+<mdai-button on:click={() => console.log("Text button!")}>
+  Text button
+</mdai-button>
+<mdai-button
+  icon="account_tree"
+  variant="outlined"
+  on:click={() => console.log("Outlined button!")}>
+  Outlined button w/ icon
+</mdai-button>
+<mdai-button
+  variant="filled"
+  on:click={() => console.log("Filled button!")}>
+  Filled button
+</mdai-button>
+<mdai-button
+  icononly
+  variant="outlined"
+  icon="celebration"
+  on:click={() => console.log("Icon button!")}></mdai-button>`.trim()}
         />
       </div>
     </div>

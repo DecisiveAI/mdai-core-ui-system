@@ -20,12 +20,18 @@ const libConfig = {
         resolve(__dirname, "src/lib/styles/mdai-theme-console.css"),
         resolve(__dirname, "src/lib/styles/mdai-theme-website.css"),
       ],
-      name: "Decisive Core UI System",
+      name: "MyDecisiveCoreUI",
       fileName: "mdai-core-ui",
     },
     cssCodeSplit: true,
     rollupOptions: {
-      external: ["lit", new RegExp("@material/web.*")],
+      external: ["react"],
+      output: {
+        preserveModules: false,
+        globals: {
+          react: "React",
+        },
+      },
     },
   },
 };

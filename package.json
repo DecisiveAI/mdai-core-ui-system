@@ -29,6 +29,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tsconfig/svelte": "^5.0.2",
     "mensch": "^0.3.4",
+    "react": "^18.2.0",
     "svelte": "^4.2.10",
     "svelte-check": "^3.6.3",
     "svelte-highlight": "^7.6.0",
@@ -37,6 +38,8 @@
     "vite": "^5.1.0"
   },
   "dependencies": {
-    "@material/web": "^1.2.0"
+    "@lit/react": "^1.0.3",
+    "@material/web": "^1.2.0",
+    "lit": "^3.1.2"
   }
 }
