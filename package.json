@@ -2,7 +2,7 @@
   "name": "@mydecisiveai/core-ui",
   "repository": "https://github.com/DecisiveAI/mydecisive-core-ui-system",
   "license": "Apache-2.0",
-  "version": "0.0.0",
+  "version": "0.1.0-preview1",
   "type": "module",
   "exports": {
     ".": {
