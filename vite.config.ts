@@ -4,6 +4,7 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 const demoConfig = {
   plugins: [svelte()],
+  base: "./",
   build: {
     outDir: "demo",
   },
