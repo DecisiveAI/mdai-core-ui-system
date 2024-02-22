@@ -39,11 +39,15 @@
   <h3>MyDecisive UI System</h3>
   <div class="blurb-box">
     <p>
-      Our UI system draws primarily from <a
+      We are currently in the process of building out our component set based on <a
         href="https://material-web.dev"
         target="_blank">Material Web</a
-      >, with our own theme and other touches applied. More of our own custom
-      components will be added in the future.
+      >. See the
+      <a
+        href="https://github.com/DecisiveAI/mydecisive-core-ui-system/blob/main/README.md#components"
+        target="_blank">README.md</a
+      >
+      for progress on components.
     </p>
   </div>
   <div class="theme-selector-container">
@@ -58,22 +62,51 @@
     <div class="component-overview">
       <h3>Buttons</h3>
       <div class="component-preview row">
-        <md-outlined-button>Outlined Button</md-outlined-button>
-        <md-filled-button>Filled Button</md-filled-button>
-        <md-text-button>Text Button</md-text-button>
-        <md-outlined-icon-button>
-          <md-icon>celebration</md-icon>
-        </md-outlined-icon-button>
+        <mdai-button on:click={() => console.log("Text button!")}
+          >Text button</mdai-button
+        >
+        <mdai-button
+          variant="outlined"
+          icon="account_tree"
+          on:click={() => console.log("Outlined button!")}
+          >Outlined button w/ icon</mdai-button
+        >
+        <mdai-button
+          variant="filled"
+          on:click={() => console.log("Filled button!")}
+          >Filled button</mdai-button
+        >
+        <mdai-button
+          icononly
+          variant="outlined"
+          icon="celebration"
+          on:click={() => console.log("Icon button!")}
+        ></mdai-button>
       </div>
       <div class="code-block">
         <Highlight
           language={xml}
           class="code-block"
           code={`
-<md-outlined-button>Outlined Button</md-outlined-button>
-<md-filled-button>Filled Button</md-filled-button>
-<md-text-button>Text Button</md-text-button>
-<md-outlined-icon-button><md-icon>celebration</md-icon></md-outlined-icon-button>`.trim()}
+<mdai-button on:click={() => console.log("Text button!")}>
+  Text button
+</mdai-button>
+<mdai-button
+  icon="account_tree"
+  variant="outlined"
+  on:click={() => console.log("Outlined button!")}>
+  Outlined button w/ icon
+</mdai-button>
+<mdai-button
+  variant="filled"
+  on:click={() => console.log("Filled button!")}>
+  Filled button
+</mdai-button>
+<mdai-button
+  icononly
+  variant="outlined"
+  icon="celebration"
+  on:click={() => console.log("Icon button!")}></mdai-button>`.trim()}
         />
       </div>
     </div>
