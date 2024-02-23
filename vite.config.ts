@@ -16,10 +16,10 @@ const libConfig = {
     // TODO: Figure out why SVGs for the demo site are copied over
     lib: {
       entry: [
-        resolve(__dirname, "src/lib/index.ts"),
-        resolve(__dirname, "src/lib/styles/mdai-base.css"),
-        resolve(__dirname, "src/lib/styles/mdai-theme-console.css"),
-        resolve(__dirname, "src/lib/styles/mdai-theme-website.css"),
+        resolve(__dirname, "./index.ts"),
+        resolve(__dirname, "./styles/mdai-base.css"),
+        resolve(__dirname, "./styles/mdai-theme-console.css"),
+        resolve(__dirname, "./styles/mdai-theme-website.css"),
       ],
       name: "MyDecisiveCoreUI",
       fileName: "mdai-core-ui",
