@@ -22,8 +22,10 @@ const libConfig = {
         resolve(__dirname, "./styles/mdai-theme-website.css"),
       ],
       name: "MyDecisiveCoreUI",
-      fileName: "mdai-core-ui",
+      fileName: "mdai-core-ui.min",
     },
+    copyPublicDir: false,
+    sourcemap: true,
     cssCodeSplit: true,
     rollupOptions: {
       external: ["react"],
