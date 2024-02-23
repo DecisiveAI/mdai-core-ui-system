@@ -7,7 +7,6 @@ import "@material/web/iconbutton/icon-button.js";
 import "@material/web/iconbutton/outlined-icon-button.js";
 import "@material/web/iconbutton/filled-icon-button.js";
 import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
 
 const BUTTON_VARIANT = {
   OUTLINED: "outlined",
@@ -16,31 +15,33 @@ const BUTTON_VARIANT = {
 };
 
 /**
- * An example element.
- *
+ * MyDecisive button
  * @slot - This element has a slot, which should contain the button label
  */
-@customElement("mdai-button")
 export class MdaiButton extends LitElement {
-  /**
-   * Button variant, one of outlined, filled or text. Default: text
-   * @type {string=}
-   */
-  @property({ type: String })
-  variant;
+  static properties = {
+    variant: { type: String },
+    icon: { type: String },
+    iconOnly: { type: Boolean },
+  };
 
-  /**
-   * Button icon-type string, from https://fonts.google.com/icons, expects name in snake-case, like "account_tree". If left empty, no icon is rendered. Default: null, no icon
-   * @type {string=}
-   */
-  @property({ type: String })
-  icon;
-
-  /**
-   * @type {boolean=}
-   */
-  @property({ type: Boolean })
-  iconOnly;
+  constructor() {
+    super();
+    /**
+     * Button variant, one of outlined, filled or text. Default: text
+     * @type {string=}
+     */
+    this.variant = undefined;
+    /**
+     * Button icon-type string, from https://fonts.google.com/icons, expects name in snake-case, like "account_tree". If left empty, no icon is rendered. Default: null, no icon
+     * @type {string=}
+     */
+    this.icon = undefined;
+    /**
+     * @type {boolean=}
+     */
+    this.iconOnly = undefined;
+  }
 
   render() {
     // TODO: Figure out how to DRY this up in a way that's lit friendly
@@ -83,3 +84,5 @@ export class MdaiButton extends LitElement {
     }
   }
 }
+
+customElements.define("mdai-button", MdaiButton);
