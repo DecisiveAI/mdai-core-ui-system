@@ -7,21 +7,6 @@
   "license": "Apache-2.0",
   "version": "0.1.0-preview1",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/mdai-core-ui.js",
-      "require": "./dist/mdai-core-ui.cjs"
-    },
-    "./mdai-base.css": {
-      "import": "./dist/mdai-base.css"
-    },
-    "./mdai-theme-console.css": {
-      "import": "./dist/mdai-theme-console.css"
-    },
-    "./mdai-theme-website.css": {
-      "import": "./dist/mdai-theme-website.css"
-    }
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

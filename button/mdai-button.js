@@ -7,35 +7,41 @@ import "@material/web/iconbutton/icon-button.js";
 import "@material/web/iconbutton/outlined-icon-button.js";
 import "@material/web/iconbutton/filled-icon-button.js";
 import { html, LitElement } from "lit";
-import { customElement, property } from "lit/decorators.js";
 
-enum BUTTON_VARIANT {
-  OUTLINED = "outlined",
-  FILLED = "filled",
-  TEXT = "text",
-}
+const BUTTON_VARIANT = {
+  OUTLINED: "outlined",
+  FILLED: "filled",
+  TEXT: "text",
+};
 
 /**
- * An example element.
- *
+ * MyDecisive button
  * @slot - This element has a slot, which should contain the button label
  */
-@customElement("mdai-button")
 export class MdaiButton extends LitElement {
-  /**
-   * Button variant, one of outlined, filled or text. Default: text
-   */
-  @property({ type: String })
-  variant?: BUTTON_VARIANT;
+  static properties = {
+    variant: { type: String },
+    icon: { type: String },
+    iconOnly: { type: Boolean },
+  };
 
-  /**
-   * Button icon-type string, from https://fonts.google.com/icons, expects name in snake-case, like "account_tree". If left empty, no icon is rendered. Default: null, no icon
-   */
-  @property({ type: String })
-  icon?: string;
-
-  @property({ type: Boolean })
-  iconOnly?: boolean;
+  constructor() {
+    super();
+    /**
+     * Button variant, one of outlined, filled or text. Default: text
+     * @type {string=}
+     */
+    this.variant = undefined;
+    /**
+     * Button icon-type string, from https://fonts.google.com/icons, expects name in snake-case, like "account_tree". If left empty, no icon is rendered. Default: null, no icon
+     * @type {string=}
+     */
+    this.icon = undefined;
+    /**
+     * @type {boolean=}
+     */
+    this.iconOnly = undefined;
+  }
 
   render() {
     // TODO: Figure out how to DRY this up in a way that's lit friendly
@@ -79,8 +85,4 @@ export class MdaiButton extends LitElement {
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "mdai-button": MdaiButton;
-  }
-}
+customElements.define("mdai-button", MdaiButton);

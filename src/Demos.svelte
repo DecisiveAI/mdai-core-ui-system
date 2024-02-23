@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-  import consoleTheme from "./lib/styles/mdai-theme-console.css?inline";
-  import websiteTheme from "./lib/styles/mdai-theme-website.css?inline";
+  import consoleTheme from "../styles/mdai-theme-console.css?inline";
+  import websiteTheme from "../styles/mdai-theme-website.css?inline";
   enum THEME {
     CONSOLE = "CONSOLE",
     WEBSITE = "WEBSITE",
@@ -14,8 +14,8 @@
 
 <script lang="ts">
   import { applyThemeFromCss } from "./applyThemeFromCss";
-  import "./lib/index";
-  import "./lib/styles/mdai-base.css";
+  import "../index";
+  import "../styles/mdai-base.css";
   import Highlight from "svelte-highlight";
   import { xml, typescript } from "svelte-highlight/languages";
   import monokai from "svelte-highlight/styles/monokai";
