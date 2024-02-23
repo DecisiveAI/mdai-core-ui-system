@@ -9,11 +9,11 @@ import "@material/web/iconbutton/filled-icon-button.js";
 import { html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-enum BUTTON_VARIANT {
-  OUTLINED = "outlined",
-  FILLED = "filled",
-  TEXT = "text",
-}
+const BUTTON_VARIANT = {
+  OUTLINED: "outlined",
+  FILLED: "filled",
+  TEXT: "text",
+};
 
 /**
  * An example element.
@@ -24,18 +24,23 @@ enum BUTTON_VARIANT {
 export class MdaiButton extends LitElement {
   /**
    * Button variant, one of outlined, filled or text. Default: text
+   * @type {string=}
    */
   @property({ type: String })
-  variant?: BUTTON_VARIANT;
+  variant;
 
   /**
    * Button icon-type string, from https://fonts.google.com/icons, expects name in snake-case, like "account_tree". If left empty, no icon is rendered. Default: null, no icon
+   * @type {string=}
    */
   @property({ type: String })
-  icon?: string;
+  icon;
 
+  /**
+   * @type {boolean=}
+   */
   @property({ type: Boolean })
-  iconOnly?: boolean;
+  iconOnly;
 
   render() {
     // TODO: Figure out how to DRY this up in a way that's lit friendly
@@ -76,11 +81,5 @@ export class MdaiButton extends LitElement {
           >${iconTag}<slot></slot
         ></md-text-button>`;
     }
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "mdai-button": MdaiButton;
   }
 }
