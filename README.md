@@ -2,6 +2,8 @@
 
 This repository and package are where our UI components live! Our UI core is primarily based on the @material/web web components library.
 
+<div style="text-align: center; font-size: 2rem; font-weight: bold; padding: 24px 0;"><a href="https://decisiveai.github.io/mydecisive-core-ui-system/">🐙 Try the demo! 🐙</a></div>
+
 # Components
 
 | Component | `mdai` Web Component | React component   | material-web base component | Demo | Stability |
