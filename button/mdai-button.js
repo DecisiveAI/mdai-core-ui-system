@@ -23,6 +23,7 @@ export class MdaiButton extends LitElement {
     variant: { type: String },
     icon: { type: String },
     iconOnly: { type: Boolean },
+    analyticsId: { type: String },
   };
 
   constructor() {
@@ -41,6 +42,30 @@ export class MdaiButton extends LitElement {
      * @type {boolean=}
      */
     this.iconOnly = undefined;
+    /**
+     * @type {string=}
+     */
+    this.analyticsId = undefined;
+  }
+
+  _onClick() {
+    try {
+      if (typeof ((window || {})._mdai_analytics || {}).track === "function") {
+        let buttonLabel;
+        const slot = this.shadowRoot.querySelector("slot");
+        if (slot) {
+          const elements = slot.assignedNodes({ flatten: true });
+          buttonLabel = elements[0].textContent;
+        }
+        const buttonId = this.analyticsId || buttonLabel || this.icon;
+        window._mdai_analytics.track(
+          "mdai-button-click",
+          buttonId ? { buttonId } : {}
+        );
+      }
+    } catch (error) {
+      console.warn("Unable to emit analytics event due to error: " + error);
+    }
   }
 
   render() {
@@ -49,15 +74,15 @@ export class MdaiButton extends LitElement {
       const icon = this.icon || "family_star";
       switch (this.variant) {
         case BUTTON_VARIANT.FILLED:
-          return html`<md-filled-icon-button
+          return html`<md-filled-icon-button @click="${this._onClick}"
             ><md-icon>${icon}</md-icon></md-filled-icon-button
           >`;
         case BUTTON_VARIANT.OUTLINED:
-          return html`<md-outlined-icon-button
+          return html`<md-outlined-icon-button @click="${this._onClick}"
             ><md-icon>${icon}</md-icon></md-outlined-icon-button
           >`;
         default:
-          return html`<md-icon-button
+          return html`<md-icon-button @click="${this._onClick}"
             ><md-icon>${icon}</md-icon></md-icon-button
           >`;
       }
@@ -69,16 +94,22 @@ export class MdaiButton extends LitElement {
 
     switch (this.variant) {
       case BUTTON_VARIANT.FILLED:
-        return html`<md-filled-button ?hasicon=${!!this.icon}
+        return html`<md-filled-button
+          @click="${this._onClick}"
+          ?hasicon=${!!this.icon}
           >${iconTag}<slot></slot
         ></md-filled-button>`;
       case BUTTON_VARIANT.OUTLINED:
-        return html`<md-outlined-button ?hasicon=${!!this.icon}
+        return html`<md-outlined-button
+          @click="${this._onClick}"
+          ?hasicon=${!!this.icon}
           >${iconTag}<slot></slot
         ></md-outlined-button>`;
       case BUTTON_VARIANT.TEXT:
       default:
-        return html`<md-text-button ?hasicon=${!!this.icon}
+        return html`<md-text-button
+          @click="${this._onClick}"
+          ?hasicon=${!!this.icon}
           >${iconTag}<slot></slot
         ></md-text-button>`;
     }
