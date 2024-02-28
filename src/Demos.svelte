@@ -19,6 +19,19 @@
   import Highlight from "svelte-highlight";
   import { xml, typescript } from "svelte-highlight/languages";
   import monokai from "svelte-highlight/styles/monokai";
+  import { onMount } from "svelte";
+  import { initializeAnalytics } from "../common/analytics";
+
+  onMount(() => {
+    const gAnalyticsId = import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID;
+    if (gAnalyticsId) {
+      const analytics = initializeAnalytics(
+        "mdai-core-ui-system-demo",
+        gAnalyticsId
+      );
+      analytics?.page?.();
+    }
+  });
 
   let theme = THEME.CONSOLE;
   $: applyThemeFromCss(CSS_THEME_MAP[theme]);
@@ -80,6 +93,7 @@
           icononly
           variant="outlined"
           icon="celebration"
+          analyticsid="celebration-button"
           on:click={() => console.log("Icon button!")}
         ></mdai-button>
       </div>
@@ -106,6 +120,7 @@
   icononly
   variant="outlined"
   icon="celebration"
+  analyticsid="celebration-button"
   on:click={() => console.log("Icon button!")}></mdai-button>`.trim()}
         />
       </div>

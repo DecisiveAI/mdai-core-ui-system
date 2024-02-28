@@ -5,7 +5,7 @@
     "url": "https://github.com/DecisiveAI/mydecisive-core-ui-system"
   },
   "license": "Apache-2.0",
-  "version": "0.1.0-preview1",
+  "version": "0.1.0-preview2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,8 +26,10 @@
     "vite": "^5.1.0"
   },
   "dependencies": {
+    "@analytics/google-analytics": "^1.0.7",
     "@lit/react": "^1.0.3",
     "@material/web": "^1.2.0",
+    "analytics": "^0.8.11",
     "lit": "^3.1.2"
   }
 }
