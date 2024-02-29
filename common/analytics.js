@@ -24,7 +24,6 @@ export const initializeAnalytics = (
       plugins: [
         googleAnalytics({
           measurementIds: [googleAnalyticsId],
-          debug: import.meta.env.DEV,
         }),
       ],
     });
