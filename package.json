@@ -11,14 +11,24 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@chromatic-com/storybook": "^3.2.2",
+    "@storybook/addon-essentials": "^8.4.4",
+    "@storybook/addon-interactions": "^8.4.4",
+    "@storybook/addon-links": "^8.4.4",
+    "@storybook/blocks": "^8.4.4",
+    "@storybook/svelte": "^8.4.4",
+    "@storybook/svelte-vite": "^8.4.4",
+    "@storybook/test": "^8.4.4",
     "@tsconfig/svelte": "^5.0.2",
     "mensch": "^0.3.4",
     "react": "^18.2.0",
-    "svelte": "^4.2.10",
+    "storybook": "^8.4.4",
+    "svelte": "^5.2.4",
     "svelte-check": "^3.6.3",
     "svelte-highlight": "^7.6.0",
     "tslib": "^2.6.2",
@@ -29,6 +39,7 @@
     "@analytics/google-analytics": "^1.0.7",
     "@lit/react": "^1.0.3",
     "@material/web": "^1.2.0",
+    "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "analytics": "^0.8.11",
     "lit": "^3.1.2"
   }
