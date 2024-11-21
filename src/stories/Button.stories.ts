@@ -13,6 +13,7 @@ const meta = {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
+    disable: { control: 'boolean' },
   },
 } satisfies Meta<Button>;
 
@@ -44,5 +45,12 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: 'Button',
+    disable: true,
   },
 };
