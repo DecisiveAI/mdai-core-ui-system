@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SMUIButton from "@smui/button";
   import './button.css';
 
   /**
@@ -19,16 +20,17 @@
    */
   export let label: string = '';
 
-  $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  export let disable: boolean = false;
 
+  $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   $: style = backgroundColor ? `background-color: ${backgroundColor}` : '';
 </script>
 
-<button
-  type="button"
+<SMUIButton
   class={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
   {style}
   on:click
+  disabled={disable}
 >
   {label}
-</button>
+</SMUIButton>
