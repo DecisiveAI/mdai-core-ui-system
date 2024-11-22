@@ -1,5 +1,6 @@
 <script lang="ts">
     import Switch from '@smui/switch';
+    import './switch.css';
 
     type SwitchProps = {
         onClick: () => void;

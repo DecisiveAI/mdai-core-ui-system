@@ -1,0 +1,36 @@
+/* SMUI Overrides */
+.mdc-switch {
+  width: 52px;
+  height: 24px;
+}
+.mdc-switch .mdc-switch__track {
+  border-radius: 14px;
+  height: 32px;
+}
+.mdc-switch:enabled .mdc-switch__track::before {
+  background-color: #313131 !important;
+  border-radius: 100px !important;
+  border: 2px solid #d9d9d9 !important;
+}
+.mdc-switch .mdc-switch__handle::before {
+  display: none;
+}
+
+.mdc-switch:enabled .mdc-switch__track::after {
+  background-color: #b062c2 !important;
+  border-radius: 100px !important;
+}
+.mdc-switch.mdc-switch--selected:enabled .mdc-switch__handle::after {
+  background: black !important;
+  width: 24px;
+  height: 24px;
+  left: -8px;
+  top: -2px;
+  border-radius: 50px;
+}
+.mdc-switch.mdc-switch--unselected:enabled .mdc-switch__handle::after {
+  background: white !important;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
