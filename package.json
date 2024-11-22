@@ -21,6 +21,7 @@
     "@chromatic-com/storybook": "^3.2.2",
     "@smui/button": "^8.0.0-beta.0",
     "@smui/card": "^8.0.0-beta.0",
+    "@smui/switch": "^8.0.0-beta.0",
     "@storybook/addon-essentials": "^8.4.4",
     "@storybook/addon-interactions": "^8.4.4",
     "@storybook/addon-links": "^8.4.4",
