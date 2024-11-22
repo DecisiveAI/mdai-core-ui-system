@@ -20,6 +20,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     disabled: false,
-    label: "Switch",
+    checked: true,
+    icons: false,
   },
 };
