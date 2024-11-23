@@ -7,7 +7,6 @@
         class?: string;
         disabled?: boolean;
         checked: boolean;
-        icons?: boolean;
     }
 
     let {
@@ -15,10 +14,9 @@
         class: className,
         disabled,
         checked,
-        icons = true,
     }: SwitchProps = $props();
 
 </script>
 
-<Switch {checked} {disabled} {icons} class={className} {onClick}/>
+<Switch {checked} {disabled} icons={false} class={className} {onClick}/>
 
