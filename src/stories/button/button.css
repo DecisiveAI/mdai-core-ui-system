@@ -12,15 +12,18 @@
   background-color: #E288F6;
   color: black !important;
 }
-.storybook-button--primary--disabled {
-  background-color: #FFFFFF;
-  color: #393939 !important;
-}
+
 .storybook-button--primary:focus:hover {
   background-color: #a97cb3;
 }
+
 .storybook-button--primary .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after{
   background-color: #6F6F6F80;
+}
+
+.storybook-button-primary--disabled {
+  background-color: #FFFFFF;
+  color: #393939;
 }
 
 .storybook-button--secondary {
@@ -29,9 +32,7 @@
   color: white !important;
   border: #6F6F6F solid 1px;
 }
-.storybook-button--secondary--disabled {
-  color: #EDEDED;
-}
+
 .storybook-button--secondary:focus:hover {
   background-color: #6F6F6F80;
 }
@@ -39,7 +40,6 @@
 .storybook-button--secondary .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after{
   background-color: #6F6F6F;
 }
-
 
 .storybook-button--small {
   padding: 10px 16px;
@@ -56,7 +56,8 @@
 }
 
 .storybook-button--disabled {
-  
+  background-color: transparent;
+  color: #5a5a5a !important;
 }
 
 /* SMUI Overrides */
