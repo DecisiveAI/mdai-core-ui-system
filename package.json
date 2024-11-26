@@ -44,8 +44,10 @@
     "@analytics/google-analytics": "^1.0.7",
     "@lit/react": "^1.0.3",
     "@material/web": "^1.2.0",
+    "@smui/switch": "^8.0.0-beta.0",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "analytics": "^0.8.11",
-    "lit": "^3.1.2"
+    "lit": "^3.1.2",
+    "smui-theme": "^8.0.0-beta.0"
   }
 }
