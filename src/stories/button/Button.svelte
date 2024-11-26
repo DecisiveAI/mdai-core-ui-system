@@ -22,20 +22,19 @@
   /**
    * Should it be disabled?
    */
-  export let disable = false;
+  export let disabled = false;
 
   $: mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  $: isDisabled = !!disable && primary ? 'storybook-button-primary--disabled' : 'storybook-button--disabled';
+  $: isDisabled = disabled ? (primary ? 'storybook-button-primary--disabled' : 'storybook-button--disabled') : '';
   $: style = backgroundColor ? `background-color: ${backgroundColor}` : '';
   $: classes = ['storybook-button', `storybook-button--${size}`, mode, isDisabled].join(' ');
-  $: console.log('classes', classes);
 </script>
 
 <SMUIButton
-  class={['storybook-button', `storybook-button--${size}`, mode, isDisabled].join(' ')}
+  class={classes}
   {style}
   on:click
-  disabled={disable}
+  {disabled}
 >
   {label}
 </SMUIButton>

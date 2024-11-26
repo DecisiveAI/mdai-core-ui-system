@@ -13,8 +13,11 @@
   color: black !important;
 }
 
-.storybook-button--primary:focus:hover {
+.storybook-button--primary:focus {
   background-color: #a97cb3;
+}
+.storybook-button--primary:hover {
+  background-color: #E8E7E7;
 }
 
 .storybook-button--primary .mdc-button .mdc-button__ripple::before, .mdc-button .mdc-button__ripple::after{
@@ -23,7 +26,7 @@
 
 .storybook-button-primary--disabled {
   background-color: #FFFFFF;
-  color: #393939;
+  color: #393939 !important;
 }
 
 .storybook-button--secondary {
