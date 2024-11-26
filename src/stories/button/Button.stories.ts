@@ -4,7 +4,7 @@ import Button from './Button.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
   tags: ['autodocs'],
   argTypes: {
@@ -13,6 +13,7 @@ const meta = {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
+    disabled: { control: "boolean" },
   },
 } satisfies Meta<Button>;
 
@@ -44,5 +45,12 @@ export const Small: Story = {
   args: {
     size: 'small',
     label: 'Button',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: 'Button',
+    disabled: true,
   },
 };
