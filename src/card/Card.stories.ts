@@ -7,7 +7,11 @@ const meta = {
   component: Card,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
+        backgroundColor: { control: 'color' },
+        buttonVariant: {
+          control: { type: 'select' },
+          options: ['default', 'outlined', 'raised'],
+        },
   },
 } satisfies Meta<Card>;
 
