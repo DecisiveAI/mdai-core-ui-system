@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
+import { expect, userEvent, within } from '@storybook/test';
 
 import Button from './Button.svelte';
 
@@ -24,7 +25,7 @@ export const Raised: Story = {
     variant: 'Filled',
     label: 'Button',
     icon: 'add',
-  },
+  }
 };
 
 export const Outlined: Story = {

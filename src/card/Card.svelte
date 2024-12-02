@@ -32,11 +32,25 @@
       buttonsOnClick = [() => {}],
     }: CardProps = $props();
 
-    let style = $derived(variant === 'Primary' ? 'background-color: transparent;' : (variant === 'Outlined' ? 'border: 1px solid #393939; background-color: transparent' : 'background-color: #313131'));
+    const makeStyle = (width: string, variant: string) => {
+      let backgroundColor;
+      let border;
+      if (variant === 'Primary' || variant === 'Outlined') {
+        backgroundColor = 'transparent';
+        if (variant === 'Outlined') {
+          border = '1px solid #393939';
+        }
+      } else {
+        backgroundColor = '#313131';
+      }
+      return `width: ${width}; background-color: ${backgroundColor}; border: ${border}`;
+    }
+
+    let style = $derived(makeStyle(width, variant));
 </script>
 
 <div class="mdai-card-container">
-  <SMUICard style={`width: ${width}; ${style}`}>
+  <SMUICard style={style}>
     <PrimaryAction ripple={cardDisabled} class={cardDisabled ? "mdai-card-disabled" : "mdai-card"} style={`background-color: 'transparent';`}>
     <!-- Title Section -->
     <div class="mdai-card-header">
@@ -74,10 +88,10 @@
     <!-- Action Button -->
     <div class="mdai-card-actions">
       {#if buttonLabels.length > 1}
-      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled} on:click={() => buttonsOnClick[0]?.()}></Button>
-      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled} on:click={() => buttonsOnClick[1]?.()}></Button>
+      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled} onClick={buttonsOnClick[0]?.()}></Button>
+      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled} onClick={buttonsOnClick[1]?.()}></Button>
       {:else}
-      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled} on:click={() => buttonsOnClick[0]?.()}></Button>
+      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled} onClick={buttonsOnClick[0]?.()}></Button>
       {/if}
     </div>
   </PrimaryAction>
