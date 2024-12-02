@@ -1,3 +1,24 @@
+/* SMUI overrides */
+:root {
+  --mdc-switch-handle-width: 24px;
+  --mdc-switch-handle-height: 24px;
+  --mdc-switch-handle-shape: 12px;
+  --mdc-switch-track-height: 32px;
+  --mdc-switch-track-shape: 16px;
+  --mdc-switch-track-width: 52px;
+
+  --mdc-switch-selected-pressed-handle-color: var(--mdai-primary-500);
+  --mdc-switch-selected-hover-handle-color: var(--mdai-primary-500);
+  --mdc-switch-selected-focus-handle-color: var(--mdai-primary-500);
+  --mdc-switch-selected-handle-color: var(--mdai-high-emphasis-100);
+  --mdc-switch-disabled-selected-handle-color: var(--mdai-high-emphasis-100);
+  --mdc-switch-unselected-pressed-handle-color: var(--mdai-light-grey-1);
+  --mdc-switch-unselected-handle-color: var(--mdai-light-grey-1);
+  --mdc-switch-unselected-hover-handle-color: var(--mdai-light-grey-1);
+  --mdc-switch-unselected-focus-handle-color: var(--mdai-light-grey-1);
+  --mdc-switch-disabled-unselected-handle-color: var(--mdai-light-grey-2);
+}
+
 .mdc-switch .mdc-switch__track {
   box-sizing: border-box;
 }

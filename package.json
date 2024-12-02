@@ -19,6 +19,9 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
+    "@mdi/js": "^7.4.47",
+    "@smui/button": "^8.0.0-beta.0",
+    "@smui/card": "^8.0.0-beta.0",
     "@storybook/addon-essentials": "^8.4.4",
     "@storybook/addon-interactions": "^8.4.4",
     "@storybook/addon-links": "^8.4.4",
@@ -29,6 +32,7 @@
     "@tsconfig/svelte": "^5.0.2",
     "mensch": "^0.3.4",
     "react": "^18.2.0",
+    "smui-theme": "^8.0.0-beta.0",
     "storybook": "^8.4.4",
     "svelte": "^5.2.4",
     "svelte-check": "^3.6.3",
