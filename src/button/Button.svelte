@@ -2,12 +2,12 @@
 	import SMUIButton, {Icon} from "@smui/button";
   import './button.css';
 
+  const buttonModeAliasMap = { Filled: 'raised', Outlined: 'outlined' }
+
   type ButtonProps = {
         label: string;
-        variant?: 'default' | 'outlined' | 'raised';
-        backgroundColor?: string | undefined;
+        variant?: 'Filled' | 'Outlined' | 'Text';
         disabled?: boolean;
-        square?: boolean;
         /**
         * Material icon name
         */
@@ -16,19 +16,15 @@
 
     let {
       label = 'Button',
-      variant = 'default',
-      backgroundColor,
+      variant = 'Filled',
       disabled,
-      square,
       icon
     }: ButtonProps = $props();
 
-    let style = $derived(`${backgroundColor ? `background-color: ${backgroundColor};` : ''} ${square ? 'border-radius: 5px !important;' : ''}`);
-    let mode = $derived(variant === 'default' ? '' : variant);
+    let mode = $derived(variant === 'Text' ? '' : buttonModeAliasMap[variant]);
 </script>
 
 <SMUIButton
-  {style}
   variant={mode}
   on:click
   {disabled}

@@ -8,10 +8,9 @@ const meta = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
     variant: {
       control: { type: 'select' },
-      options: ['default', 'outlined', 'raised'],
+      options: ['Text', 'Outlined', 'Filled'],
     },
   },
 } satisfies Meta<Button>;
@@ -22,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Raised: Story = {
   args: {
-    variant: 'raised',
+    variant: 'Filled',
     label: 'Button',
     icon: 'add',
   },
@@ -30,36 +29,20 @@ export const Raised: Story = {
 
 export const Outlined: Story = {
   args: {
-    variant: 'outlined',
+    variant: 'Outlined',
     label: 'Outlined',
   },
 };
 
-export const Default: Story = {
+export const Text: Story = {
   args: {
-    label: 'Default',
-  },
-};
-
-export const Squarcle: Story = {
-  args: {
-    variant: 'raised',
-    label: 'Squarcle',
-    square: true,
-  },
-};
-
-export const SquarcleOutlined: Story = {
-  args: {
-    variant: 'outlined',
-    label: 'SquarcleOutlined',
-    square: true,
+    label: 'Text',
   },
 };
 
 export const Disabled: Story = {
   args: {
-    variant: 'raised',
+    variant: 'Filled',
     label: 'Disabled',
     disabled: true,
   },

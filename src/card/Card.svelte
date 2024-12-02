@@ -6,42 +6,36 @@
 
   type CardProps = {
         label: string;
-        backgroundColor?: string | undefined;
         width?: string;
         image?: string;
+        variant?: 'Primary' | 'Outlined' | 'Filled';
         cardDisabled?: boolean;
         buttonDisabled?: boolean;
         icon?: string | undefined;
         subtitle?: string;
         content?: string | string[];
-        buttonLabel?: string;
-        buttonVariant?: 'default' | 'outlined' | 'raised';
-        footer?: string;
+        buttonLabels?: string[];
     }
 
     let {
       label = 'Title',
-      backgroundColor = 'transparent',
       width = '360px',
       image = 'https://via.placeholder.com/400x200',
+      variant = 'Primary',
       cardDisabled = false,
       buttonDisabled = false,
       icon = Logo,
       subtitle = 'Subtitle',
       content = 'Content',
-      buttonLabel = 'Action',
-      buttonVariant = 'default',
-      footer = '',
+      buttonLabels = ['Action'],
     }: CardProps = $props();
 
-    $effect(() => {
-      console.log('Card Props', {label, backgroundColor, width, image, cardDisabled, buttonDisabled, icon, subtitle, content, buttonLabel, footer});
-    });
+    let style = $derived(variant === 'Primary' ? 'background-color: transparent;' : (variant === 'Outlined' ? 'border: 1px solid #393939; background-color: transparent' : 'background-color: #313131'));
 </script>
 
 <div class="mdai-card-container">
-  <SMUICard style={`background-color: ${backgroundColor || 'transparent'}; width: ${width}`}>
-    <PrimaryAction ripple={cardDisabled} class={cardDisabled ? "mdai-card-disabled" : "mdai-card"} style={`background-color: ${backgroundColor || 'transparent'};`}>
+  <SMUICard style={`width: ${width}; ${style}`}>
+    <PrimaryAction ripple={cardDisabled} class={cardDisabled ? "mdai-card-disabled" : "mdai-card"} style={`background-color: 'transparent';`}>
     <!-- Title Section -->
     <div class="mdai-card-header">
       {#if icon}
@@ -77,13 +71,13 @@
 
     <!-- Action Button -->
     <div class="mdai-card-actions">
-      {#if buttonLabel}
-        <Button variant={buttonVariant} label={buttonLabel} disabled={buttonDisabled}></Button>
+      {#if buttonLabels.length > 1}
+      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled}></Button>
+      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled}></Button>
+      {:else}
+      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled}></Button>
       {/if}
     </div>
-
-    <!-- Footer (Optional) -->
-    {@html footer}
   </PrimaryAction>
   </SMUICard>
 </div>

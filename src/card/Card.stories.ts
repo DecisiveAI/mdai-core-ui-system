@@ -6,13 +6,7 @@ const meta = {
   title: 'Card',
   component: Card,
   tags: ['autodocs'],
-  argTypes: {
-        backgroundColor: { control: 'color' },
-        buttonVariant: {
-          control: { type: 'select' },
-          options: ['default', 'outlined', 'raised'],
-        },
-  },
+  argTypes: {},
 } satisfies Meta<Card>;
 
 export default meta;
@@ -24,7 +18,6 @@ export const Primary: Story = {
     label: "Card Title",
     subtitle: "This is a subtitle",
     content: "This is the content of the card. It can hold text, images, or other components.",
-    buttonLabel: "Card Button",
-    backgroundColor: "transparent"
+    buttonLabels: ["Card Button", "Card Button 2"],
   },
 };
