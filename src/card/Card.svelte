@@ -15,6 +15,7 @@
         subtitle?: string;
         content?: string | string[];
         buttonLabels?: string[];
+        buttonsOnClick?: Array<() => void>;
     }
 
     let {
@@ -28,6 +29,7 @@
       subtitle = 'Subtitle',
       content = 'Content',
       buttonLabels = ['Action'],
+      buttonsOnClick = [() => {}],
     }: CardProps = $props();
 
     let style = $derived(variant === 'Primary' ? 'background-color: transparent;' : (variant === 'Outlined' ? 'border: 1px solid #393939; background-color: transparent' : 'background-color: #313131'));
@@ -72,10 +74,10 @@
     <!-- Action Button -->
     <div class="mdai-card-actions">
       {#if buttonLabels.length > 1}
-      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled}></Button>
-      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled}></Button>
+      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled} on:click={() => buttonsOnClick[0]?.()}></Button>
+      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled} on:click={() => buttonsOnClick[1]?.()}></Button>
       {:else}
-      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled}></Button>
+      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled} on:click={() => buttonsOnClick[0]?.()}></Button>
       {/if}
     </div>
   </PrimaryAction>
