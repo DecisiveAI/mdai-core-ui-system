@@ -1,0 +1,42 @@
+:root {
+  --mdc-checkbox-unchecked-color: var(--mdai-light-grey-1);
+  --mdc-checkbox-disabled-color: var(--mdai-light-grey-2);
+  --mdc-checkbox-checked-color: var(--mdai-brand---light-purple);
+  --mdc-checkbox-ink-color: var(--mdai-high-emphasis-100);
+
+  --mdc-ripple-color: var(--mdai-white);
+  --mdc-ripple-hover-opacity: 1;
+  --mdc-ripple-focus-opacity: 1;
+}
+
+.mdc-checkbox:hover
+  .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not(
+    [data-indeterminate="true"]
+  )
+  ~ .mdc-checkbox__background,
+.mdc-checkbox.mdc-ripple-upgraded--background-focused
+  .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not(
+    [data-indeterminate="true"]
+  )
+  ~ .mdc-checkbox__background {
+  border-color: var(--mdai-light-grey-2);
+}
+.mdc-checkbox.mdc-ripple-upgraded--background-focused
+  .mdc-checkbox__ripple::before,
+.mdc-checkbox:not(.mdc-ripple-upgraded):focus .mdc-checkbox__ripple::after {
+  background-color: var(--mdai-white);
+}
+
+.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected
+  .mdc-checkbox__ripple::before,
+.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected
+  .mdc-checkbox__ripple::after,
+.mdc-checkbox.mdc-checkbox--selected
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::before,
+.mdc-checkbox.mdc-checkbox--selected
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::after {
+  background-color: var(--mdai-med-grey-50);
+  opacity: 1;
+}
