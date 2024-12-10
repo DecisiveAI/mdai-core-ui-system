@@ -24,11 +24,13 @@
     }: ButtonProps = $props();
 
     let mode = $derived(variant === 'Text' ? '' : buttonModeAliasMap[variant]);
+    
 </script>
 
 <SMUIButton
   variant={mode}
-  {onClick}
+  on:click={onClick}
+  action={'click'}
   {disabled}
 >
 {#if icon}
