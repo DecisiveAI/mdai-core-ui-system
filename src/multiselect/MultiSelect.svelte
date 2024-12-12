@@ -42,7 +42,7 @@
       {#if label}
         <div class="top-label">{label}</div>
       {/if}
-      <Button variant="Filled" label={selectionsToLabel ? selectionsToLabel : noSelectionsLabel} handleChange={toggleMenu} icon={'keyboard_arrow_down'}/>
+      <Button variant="Filled" label={selectionsToLabel ? selectionsToLabel : noSelectionsLabel} handleClick={toggleMenu} icon={'keyboard_arrow_down'}/>
       <SMUIMenu
         style={`min-height: ${Math.min(options.length, 4)}px`}
         class="custom-select-menu"

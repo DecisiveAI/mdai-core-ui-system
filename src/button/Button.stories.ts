@@ -25,7 +25,7 @@ export const Raised: Story = {
     variant: 'Filled',
     label: 'Button',
     icon: 'add',
-    handleChange: () => console.log('clicked'),
+    handleClick: () => console.log('clicked'),
   },
 };
 
