@@ -8,6 +8,7 @@
     color: var(--mdai-light-grey-2)
 }
 .mdc-menu .mdc-deprecated-list{
+  width: 360px;
   color: var(--mdai-light-grey-2)
 }
 
@@ -31,7 +32,11 @@
 }
 
 /* Selected text */
-.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
+.mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text, .mdc-deprecated-list-item--selected{
   color: var(--mdai-white);
+}
+
+:not(.mdc-deprecated-list-item--disabled).mdc-deprecated-list-item--selected .mdc-deprecated-list-item__ripple::before, :not(.mdc-deprecated-list-item--disabled).mdc-deprecated-list-item--selected .mdc-deprecated-list-item__ripple::after{
+  background-color: var(--mdai-high-emphasis-60);
 }
 

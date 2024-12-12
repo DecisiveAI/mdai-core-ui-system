@@ -12,7 +12,7 @@
         * Material icon name
         */
         icon?: string
-        onClick?: () => void;
+        handleChange?: () => void;
     }
 
     let {
@@ -20,7 +20,7 @@
       variant = 'Text',
       disabled,
       icon,
-      onClick,
+      handleChange,
     }: ButtonProps = $props();
 
     let mode = $derived(variant === 'Text' ? '' : buttonModeAliasMap[variant]);
@@ -29,7 +29,7 @@
 
 <SMUIButton
   variant={mode}
-  on:click={onClick}
+  onclick={handleChange}
   action={'click'}
   {disabled}
 >

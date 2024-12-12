@@ -1,25 +1,36 @@
 <script lang="ts">
-    import SMUICheckbox from '@smui/checkbox';
-    
-    import './checkbox.css';
+  import SMUIFormfield from "@smui/form-field";
+  import SMUICheckbox from "@smui/checkbox";
+  import "./checkbox.css";
 
-    type CheckboxProps = {
-        checked?: boolean;
-        disabled?: boolean;
-        indeterminate?: boolean;
-    }
-
-    let {
-        checked,
-        disabled,
-        indeterminate,
-    }: CheckboxProps = $props();
+  export type CheckboxProps = {
+    checked?: boolean;
+    disabled?: boolean;
+    indeterminate?: boolean;
+    name?: string;
+    value?: string;
+    error?: boolean;
+  };
+  let {
+    checked,
+    disabled,
+    indeterminate,
+    name,
+    value,
+    error,
+  }: CheckboxProps = $props();
 
 </script>
 
-<SMUICheckbox
-    {checked}
-    {disabled}
-    {indeterminate}
-/>
-
+{#if name}
+  <SMUIFormfield {disabled}>
+    {#snippet label()}
+      {name}
+    {/snippet}
+    <SMUICheckbox class={error ? "mdai-checkbox-error" : ""} {checked} {disabled} {indeterminate} {value} />
+  </SMUIFormfield>
+{:else}
+  <SMUIFormfield>
+    <SMUICheckbox class={error ? "mdai-checkbox-error" : ""} {checked} {disabled} {indeterminate} />
+  </SMUIFormfield>
+{/if}

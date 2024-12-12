@@ -88,10 +88,10 @@
     <!-- Action Button -->
     <div class="mdai-card-actions">
       {#if buttonLabels.length > 1}
-      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled} onClick={buttonsOnClick[0]?.()}></Button>
-      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled} onClick={buttonsOnClick[1]?.()}></Button>
+      <Button variant='Outlined' label={buttonLabels[0]} disabled={buttonDisabled} handleChange={buttonsOnClick[0]?.()}></Button>
+      <Button variant='Filled' label={buttonLabels[1]} disabled={buttonDisabled} handleChange={buttonsOnClick[1]?.()}></Button>
       {:else}
-      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled} onClick={buttonsOnClick[0]?.()}></Button>
+      <Button variant='Filled' label={buttonLabels} disabled={buttonDisabled} handleChange={buttonsOnClick[0]?.()}></Button>
       {/if}
     </div>
   </PrimaryAction>

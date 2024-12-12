@@ -3,10 +3,6 @@
   --mdc-checkbox-disabled-color: var(--mdai-light-grey-2);
   --mdc-checkbox-checked-color: var(--mdai-brand---light-purple);
   --mdc-checkbox-ink-color: var(--mdai-high-emphasis-100);
-
-  --mdc-ripple-color: var(--mdai-white);
-  --mdc-ripple-hover-opacity: 1;
-  --mdc-ripple-focus-opacity: 1;
 }
 
 .mdc-checkbox:hover
@@ -39,4 +35,25 @@
   ~ .mdc-checkbox__ripple::after {
   background-color: var(--mdai-med-grey-50);
   opacity: 1;
+}
+
+.mdc-checkbox.mdc-ripple-upgraded{
+  --mdc-ripple-color: var(--mdai-white);
+  --mdc-ripple-hover-opacity: 1;
+  --mdc-ripple-focus-opacity: 1;
+}
+
+.mdc-form-field>label {
+  color: var(--mdai-white);
+}
+
+.mdai-checkbox-error .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
+  
+  border-color: var(--mdai-error) !important;
+  background-color: var(--mdai-error) !important;
+}
+
+.mdai-checkbox-error~.mdc-checkbox__background {
+  background-color: var(--mdai-error);
+  border-color: var(--mdai-error);
 }

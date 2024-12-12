@@ -1,30 +1,26 @@
 <script lang="ts">
-  // import SMUICheckbox from '@smui/checkbox';
-  import SMUIMenu, { SelectionGroup, SelectionGroupIcon } from '@smui/menu';
-  import { Item, Text } from '@smui/list';
+  import Checkbox from '../checkbox/Checkbox.svelte';
+  import SMUIMenu, { SelectionGroup } from '@smui/menu';
+  import SMUIList, { Item, Label as ItemLabel } from '@smui/list';
   import Button from '../button/Button.svelte';
   import './multiselect.css';
-
-  let menuOpen: boolean = false;
-  const toggle = () => {
-    menuOpen = !menuOpen;
-    console.log(menuOpen);
-  };
   
+  let menu: SMUIMenu;
+  let toggleMenu = () => {menu.setOpen(!menu.isOpen());}
+  let selections = $state([]);
+ 
   type MultiSelectProps = {
+        variant: 'Checkboxes' | 'Text'
         label: string;
         noSelectionsLabel: string;
         options: string[];
-        selections: string[];
-        toggleMenu?: () => void;
     }
 
     let {
+      variant = 'Text',
       label = 'Please select some options',
       noSelectionsLabel = 'MultiSelect',
       options = ['Apple', 'Banana', 'Cherry'],
-      selections = [],
-      toggleMenu = toggle,
     }: MultiSelectProps = $props();
 
     const toggleSelection = (option: string) => {
@@ -38,51 +34,37 @@
 		selections = newSelections;
 	};
 
-  //  let selectionsToLabel = $derived(selections.join(',')); 
+  const selectionsToLabel = $derived(selections.join(', '));
 </script>
 
   <div class="drawer-inner-options multi-select">
     <div style="min-width: 100px; min-height: 200px">
-      <!-- {#if label}
+      {#if label}
         <div class="top-label">{label}</div>
       {/if}
-      <Button variant="Filled" label={selections.length ? selectionsToLabel : noSelectionsLabel} onClick={toggleMenu} icon={'keyboard_arrow_down'}>
-      </Button>
+      <Button variant="Filled" label={selectionsToLabel ? selectionsToLabel : noSelectionsLabel} handleChange={toggleMenu} icon={'keyboard_arrow_down'}/>
       <SMUIMenu
-        style={`min-height: ${Math.min(options.length, 4) * listItemHeight}px`}
+        style={`min-height: ${Math.min(options.length, 4)}px`}
         class="custom-select-menu"
         bind:this={menu}
+        anchorCorner="BOTTOM"
       >
         <SMUIList>
           <SelectionGroup>
             {#each options as option}
               <Item
-                style="padding-left: 8px;"
+                style="padding-left: 15px; display: flex; justify-content: space-between;"
                 selected={selections.includes(option)}
-                on:SMUI:action={() => toggleSelection(option)}
+                onSMUIAction={() => toggleSelection(option)}
               >
-                <SMUICheckbox checked={selections.includes(option)} value={option} />
-                <ItemLabel>{option}</ItemLabel>
+              <ItemLabel>{option}</ItemLabel>
+              {#if variant === 'Checkboxes'}
+              <Checkbox checked={selections.includes(option)} value={option} />
+              {/if}
               </Item>
             {/each}
           </SelectionGroup>
         </SMUIList>
-      </SMUIMenu> -->
-      <Button label={label} onClick={toggleMenu}/>
-      <SMUIMenu open={menuOpen}>
-          <SelectionGroup>
-            {#each options as item}
-              <Item
-                onSMUIAction={() => toggleSelection(item)}
-                selected={selections.includes(item)}
-              >
-                <SelectionGroupIcon>
-                  <i class="material-icons">check</i>
-                </SelectionGroupIcon>
-                <Text>{item}</Text>
-              </Item>
-            {/each}
-          </SelectionGroup>
       </SMUIMenu>
     </div>
   </div>
