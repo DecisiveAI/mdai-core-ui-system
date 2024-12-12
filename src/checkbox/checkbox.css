@@ -5,6 +5,12 @@
   --mdc-checkbox-ink-color: var(--mdai-high-emphasis-100);
 }
 
+.mdc-checkbox.mdc-ripple-upgraded {
+  --mdc-ripple-color: var(--mdai-white);
+  --mdc-ripple-hover-opacity: 1;
+  --mdc-ripple-focus-opacity: 1;
+}
+
 .mdc-checkbox:hover
   .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not(
     [data-indeterminate="true"]
@@ -37,23 +43,95 @@
   opacity: 1;
 }
 
-.mdc-checkbox.mdc-ripple-upgraded{
-  --mdc-ripple-color: var(--mdai-white);
-  --mdc-ripple-hover-opacity: 1;
-  --mdc-ripple-focus-opacity: 1;
+.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected:hover
+  .mdc-checkbox__ripple::before,
+.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected:hover
+  .mdc-checkbox__ripple::after,
+.mdc-checkbox.mdc-checkbox--selected:hover
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::before,
+.mdc-checkbox.mdc-checkbox--selected:hover
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::after {
+  background-color: var(--mdai-white);
 }
 
-.mdc-form-field>label {
+.mdai-checkbox-error.mdc-checkbox.mdc-ripple-upgraded {
+  --mdc-ripple-color: var(--mdai-light-grey-2);
+}
+
+.mdai-checkbox-error.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected
+  .mdc-checkbox__ripple::before,
+.mdai-checkbox-error.mdc-checkbox.mdc-checkbox--selected
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::before {
+  background-color: var(--mdai-primary-050);
+}
+.mdai-checkbox-error.mdc-checkbox.mdc-ripple-upgraded--background-focused.mdc-checkbox--selected:hover
+  .mdc-checkbox__ripple::before,
+.mdai-checkbox-error.mdc-checkbox:hover
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::before {
+  background-color: var(--mdai-light-grey-2);
+}
+
+.mdc-checkbox.mdc-checkbox--selected
+  .mdc-checkbox__native-control[data-indeterminate="true"]
+  ~ .mdc-checkbox__ripple::before
+  .mdc-form-field
+  > label {
   color: var(--mdai-white);
 }
 
-.mdai-checkbox-error .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background {
-  
-  border-color: var(--mdai-error) !important;
-  background-color: var(--mdai-error) !important;
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not(
+    [data-indeterminate="true"]
+  )
+  ~ .mdc-checkbox__background,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:checked
+  ~ .mdc-checkbox__background,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:indeterminate
+  ~ .mdc-checkbox__background,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+  ~ .mdc-checkbox__background,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+  ~ .mdc-checkbox__background
+  .mdc-checkbox__mixedmark {
+  border-color: var(--mdai-error);
 }
 
-.mdai-checkbox-error~.mdc-checkbox__background {
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:checked
+  ~ .mdc-checkbox__background,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:indeterminate
+  ~ .mdc-checkbox__background,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+  ~ .mdc-checkbox__background {
+  background-color: var(--mdai-error);
+}
+
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:checked
+  ~ .mdc-checkbox__background
+  .mdc-checkbox__checkmark,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:indeterminate
+  ~ .mdc-checkbox__background
+  .mdc-checkbox__checkmark,
+.mdai-checkbox-error.mdc-checkbox
+  .mdc-checkbox__native-control[data-indeterminate="true"]:enabled
+  ~ .mdc-checkbox__background
+  .mdc-checkbox__mixedmark {
+  color: var(--mdai-error);
+}
+
+.mdai-checkbox-error ~ .mdc-checkbox__background {
   background-color: var(--mdai-error);
   border-color: var(--mdai-error);
 }
