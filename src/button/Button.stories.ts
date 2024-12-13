@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-import { expect, userEvent, within } from '@storybook/test';
-
+import { withActions } from '@storybook/addon-actions/decorator';
 import Button from './Button.svelte';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
@@ -14,6 +13,7 @@ const meta = {
       options: ['Text', 'Outlined', 'Filled'],
     },
   },
+  decorators: [withActions],
 } satisfies Meta<Button>;
 
 export default meta;
@@ -25,7 +25,8 @@ export const Raised: Story = {
     variant: 'Filled',
     label: 'Button',
     icon: 'add',
-  }
+    handleClick: () => console.log('clicked'),
+  },
 };
 
 export const Outlined: Story = {
