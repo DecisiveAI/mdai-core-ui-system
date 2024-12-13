@@ -8,6 +8,9 @@ const meta = {
   title: 'MultiSelect',
   component: MultiSelect,
   decorators: [() => FullView],
+  argTypes: {
+    selections: {table: {disable: true}}
+  },
   tags: ['autodocs'],
 } satisfies Meta<MultiSelect>;
 

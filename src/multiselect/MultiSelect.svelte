@@ -9,13 +9,13 @@
   let toggleMenu = () => {
     menu.setOpen(!menu.isOpen());
   };
-  let selections = $state([]);
 
   type MultiSelectProps = {
     variant: "Checkboxes" | "Text";
     label: string;
     noSelectionsLabel: string;
     options: string[];
+    selections?: string[];
   };
 
   let {
@@ -23,6 +23,7 @@
     label = "Please select some options",
     noSelectionsLabel = "MultiSelect",
     options = ["Apple", "Banana", "Cherry"],
+    selections = [],
   }: MultiSelectProps = $props();
 
   const toggleSelection = (option: string) => {
