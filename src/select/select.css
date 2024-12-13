@@ -1,32 +1,56 @@
-:root{
-    --mdc-theme-on-surface: var(--mdai-white);
+:root {
+  --mdc-theme-on-surface: var(--mdai-white);
 }
 
 /* Dropdown */
 .mdc-menu-surface {
-    background-color: var(--mdai-high-emphasis-100);
-    color: var(--mdai-light-grey-2)
+  background-color: var(--mdai-high-emphasis-100);
+  color: var(--mdai-light-grey-2);
 }
-.mdc-menu .mdc-deprecated-list{
-  color: var(--mdai-light-grey-2)
+.mdc-menu .mdc-deprecated-list {
+  color: var(--mdai-light-grey-2);
+}
+.shaped-outlined .mdc-select__anchor {
+  border-radius: 28px;
+}
+.shaped-outlined .mdc-text-field__input {
+  padding-left: 32px;
+  padding-right: 0;
+}
+
+.shaped-outlined .mdc-notched-outline .mdc-notched-outline__leading {
+  border-radius: 28px 0 0 28px;
+  width: 28px;
+}
+.shaped-outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-radius: 0 28px 28px 0;
+}
+.shaped-outlined .mdc-notched-outline .mdc-notched-outline__notch {
+  max-width: calc(100% - 28px * 2);
+}
+
+.shaped-outlined.mdc-select--with-leading-icon
+  .mdc-notched-outline:not(.mdc-notched-outline--notched)
+  .mdc-floating-label {
+  left: 16px;
 }
 
 /* Before dropdown */
-.mdc-select--filled:not(.mdc-select--disabled) .mdc-select__anchor{
-    background-color: var(--mdai-high-emphasis-80);
-    color: var(--mdai-font-1--primary);
+.mdc-select--filled:not(.mdc-select--disabled) .mdc-select__anchor {
+  background-color: var(--mdai-high-emphasis-80);
+  color: var(--mdai-font-1--primary);
 }
 
 /* Dropdown Icon */
-.mdc-select:not(.mdc-select--disabled) .mdc-select__dropdown-icon{
-    fill: var(--mdai-light-grey-2);
+.mdc-select:not(.mdc-select--disabled) .mdc-select__dropdown-icon {
+  fill: var(--mdai-light-grey-2);
 }
 
 /* Floating label */
-.mdc-select:not(.mdc-select--disabled) .mdc-floating-label{
-    color: var(--mdai-med-grey);
+.mdc-select:not(.mdc-select--disabled) .mdc-floating-label {
+  color: var(--mdai-med-grey);
 }
-.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label{
+.mdc-select:not(.mdc-select--disabled).mdc-select--focused .mdc-floating-label {
   color: var(--mdai-med-grey);
 }
 
@@ -34,4 +58,3 @@
 .mdc-select:not(.mdc-select--disabled) .mdc-select__selected-text {
   color: var(--mdai-white);
 }
-

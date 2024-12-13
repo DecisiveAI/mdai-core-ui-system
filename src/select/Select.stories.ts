@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 import Select from './Select.svelte';
+import FullView from "../stories/decorators/FullView.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: 'Select',
   component: Select,
+  decorators: [() => FullView],
   tags: ['autodocs'],
    argTypes: {
     

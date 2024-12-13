@@ -7,7 +7,7 @@
     background-color: var(--mdai-high-emphasis-100);
     color: var(--mdai-light-grey-2)
 }
-.mdc-menu .mdc-deprecated-list{
+.mdai-multiselect.mdc-menu .mdc-deprecated-list{
   width: 360px;
   color: var(--mdai-light-grey-2)
 }

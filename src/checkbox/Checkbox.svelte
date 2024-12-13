@@ -31,6 +31,6 @@
   </SMUIFormfield>
 {:else}
   <SMUIFormfield>
-    <SMUICheckbox class={error ? "mdai-checkbox-error" : ""} {checked} {disabled} {indeterminate} />
+    <SMUICheckbox class={error ? "mdai-checkbox-error" : ""} {checked} {disabled} {indeterminate} {value}/>
   </SMUIFormfield>
 {/if}

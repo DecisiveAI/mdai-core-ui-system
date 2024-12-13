@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 import MultiSelect from './MultiSelect.svelte';
+import FullView from "../stories/decorators/FullView.svelte";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
   title: 'MultiSelect',
   component: MultiSelect,
+  decorators: [() => FullView],
   tags: ['autodocs'],
 } satisfies Meta<MultiSelect>;
 
@@ -24,7 +26,7 @@ export const Text: Story = {
 
 export const Checkboxes: Story = {
   args: {
-    variant: 'Checkbox',
+    variant: 'Checkboxes',
     label: 'Please select some options',
     noSelectionsLabel:'MultiSelect',
     options: ['Apple', 'Banana', 'Cherry'],
